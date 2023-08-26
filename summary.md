@@ -85,4 +85,14 @@ return revered_head;
 }
 ```
 
+##heap
+
+heap 排序和 sort 的区别
+
+heap : online algorithm, no fixed length,can scale acording to the new data.
+
+sort array: a set of fixed length data , arrary acqires rescaling every time when new data added.
+
+
+
 
