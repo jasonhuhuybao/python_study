@@ -1,4 +1,17 @@
-#  python 刷题整理
+#  Java 刷题整理
+```java
+if(A == B){
+do something;
+}
+
+```
+```java
+while(A < B){
+do something;
+}
+
+```
+
 ## two pointers
 
 异向双指针
@@ -20,6 +33,43 @@ arr[i++] = arr[j++];
 } else{
 j++;
 }
+```
+
+new a Array
+
+```java
+ int[] num1Copy= new int[m];
+```
+ 
+在java输出2D表格的时候，需要将 convert the output from a 2D Array to a 2D list。
+
+```java
+class Solution {
+    public List<List<Integer>> shiftGrid(int[][] grid, int k) {
+
+        // Repeat the transform k times.
+        for (;k > 0; k--) {
+
+            int previous = grid[grid.length - 1][grid[0].length - 1];
+            for (int row = 0; row < grid.length; row++) {
+                for (int col = 0; col < grid[0].length; col++) {
+                    int temp = grid[row][col];
+                    grid[row][col] = previous;
+                    previous = temp;
+                }
+            }
+        }
+
+        // Copy the grid into a list for returning.
+        List<List<Integer>> result = new ArrayList<>();
+        for (int[] row : grid) {
+            List<Integer> listRow = new ArrayList<>();
+            result.add(listRow);
+            for (int v : row) listRow.add(v);
+        }
+
+        return result;
+    }
 ```
 
 ##二分查找 binary search
@@ -85,6 +135,7 @@ return revered_head;
 }
 ```
 
+
 ##heap
 
 heap 排序和 sort 的区别
@@ -92,6 +143,7 @@ heap 排序和 sort 的区别
 heap : online algorithm, no fixed length,can scale acording to the new data.
 
 sort array: a set of fixed length data , arrary acqires rescaling every time when new data added.
+
 
 
 
