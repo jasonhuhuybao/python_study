@@ -11,7 +11,7 @@ do something;
 }
 
 ```
-
+#array
 ## two pointers
 
 异向双指针
@@ -35,6 +35,7 @@ j++;
 }
 ```
 
+## 其他笔记
 new a Array
 
 ```java
@@ -70,6 +71,23 @@ class Solution {
 
         return result;
     }
+```
+
+## string
+```java
+class Solution {
+    public boolean checkRecord(String s) {
+        int count=0;
+        for(int i=0;i<s.length();i++){
+            if (s.charAt(i)=='A')
+             count++;
+        }
+
+    return count<2 && s.indexOf("LLL")<0;
+
+        
+    }
+}
 ```
 
 ##二分查找 binary search
