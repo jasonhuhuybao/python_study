@@ -89,6 +89,9 @@ class Solution {
     }
 }
 ```
+```java
+String s = String.valueOf(new char[]{'c'}); //将一个char数组转换成String
+```
 
 ##二分查找 binary search
 有序区间
