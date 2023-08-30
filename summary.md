@@ -11,7 +11,7 @@ do something;
 }
 
 ```
-#array
+# array
 ```java
 Arrays.sort();
 ```
@@ -163,7 +163,7 @@ return k-arr[l] < arr[r] -k ? l:r
 }
 ```
 
-#linked list
+# linked list
 new a linked list
 ```java
  ListNode dummy=new ListNode(0);
@@ -200,7 +200,7 @@ lass Solution {
 
 
 
-##revered linked list
+## revered linked list
 high level idea:
 
 1. Ak for next recursion
@@ -247,7 +247,7 @@ dequeue
 
 
 
-##heap
+## heap
 
 heap 排序和 sort 的区别
 
