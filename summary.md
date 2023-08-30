@@ -271,6 +271,30 @@ class MovingAverage {
 ```
 int tail = count > size ? (int)queue.poll() : 0;：检查窗口是否已经满了（count > size）。如果窗口已满，则从队列的头部移除一个元素，并将其赋值给tail。如果窗口未满，则tail保持为0
 
+```java
+public class MovingAverage {
+    private int [] window;
+    private int n, insert;
+    private long sum;
+    
+    /** Initialize your data structure here. */
+    public MovingAverage(int size) {
+        window = new int[size];
+        insert = 0;
+        sum = 0;
+    }
+    
+    public double next(int val) {
+        if (n < window.length)  n++;
+        sum -= window[insert];
+        sum += val;
+        window[insert] = val;
+        insert = (insert + 1) % window.length;
+        
+        return (double)sum / n;
+    }
+}
+```
 
 
 ## heap
