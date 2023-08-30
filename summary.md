@@ -12,6 +12,10 @@ do something;
 
 ```
 #array
+```java
+Arrays.sort();
+```
+
 ## two pointers
 
 异向双指针
@@ -111,6 +115,9 @@ class Solution {
 }
 ```
 
+937不会
+
+
 
 ##二分查找 binary search
 有序区间
@@ -156,6 +163,43 @@ return k-arr[l] < arr[r] -k ? l:r
 }
 ```
 
+#linked list
+new a linked list
+```java
+ ListNode dummy=new ListNode(0);
+ ```
+
+```java
+lass Solution {
+    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+        ListNode dummy=new ListNode(0);
+        ListNode curr = dummy;
+        int carry =0;
+
+        while(l1!=null || l2!=null || carry ==1){
+            int sum=0;
+            if(l1 != null){
+                sum+=l1.val;
+                l1=l1.next;
+            }
+            if(l2 != null){ // adding l2 to our sum & moving l2
+                sum += l2.val;
+                l2 = l2.next;
+            }
+            sum+=carry;
+            carry=sum/10;
+            ListNode node= new ListNode(sum%10);
+            curr.next = node;
+            curr = curr.next;
+        }
+        return dummy.next;
+
+        }
+    }
+```
+
+
+
 ##revered linked list
 high level idea:
 
@@ -174,6 +218,33 @@ head.next=null;
 return revered_head;
 }
 ```
+
+
+##stack
+stake
+特性：last in first out
+适用于记录之前的状态，必要的时候可以回到之前的状态，或者利用之前的值；
+不像array，不能用Index访问，只能每次拿stack 顶的元素；
+
+dynamic programming
+DP：记录之前所有的状态，随时可能访问任何一个子问题，所以通常用array或者HASH table，而且不会回到之前的状态，只会利用之前的值
+
+stack 有两个操作：
+peek
+pop
+
+queue 有两个操作：
+enqueue
+dequeue
+
+
+739
+找到下一个温度高的离了多少天
+
+
+
+
+
 
 
 ##heap
