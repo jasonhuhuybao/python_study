@@ -241,9 +241,35 @@ dequeue
 739
 找到下一个温度高的离了多少天
 
+## queue
+
+移动窗口
+```java
+class MovingAverage {
+    int size,windowSum = 0, count =0;
+    Deque queue = new ArrayDeque<Integer>();
 
 
+    public MovingAverage(int size) {
+        this.size = size;
+        
+    }
+    
+    public double next(int val) {
+        ++count;
+        queue.add(val);
+        int tail = count > size ? (int)queue.poll():0;
+        windowSum = windowSum - tail + val;
+        return windowSum * 1.0 / Math.min(size, count);
 
+        
+    }
+}
+```
+```java
+  int tail = count > size ? (int)queue.poll():0;
+```
+int tail = count > size ? (int)queue.poll() : 0;：检查窗口是否已经满了（count > size）。如果窗口已满，则从队列的头部移除一个元素，并将其赋值给tail。如果窗口未满，则tail保持为0
 
 
 
