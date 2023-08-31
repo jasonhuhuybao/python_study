@@ -426,4 +426,63 @@ for (String i : capitalCities.keySet()) {
 }
 ```
 
+Given two integer arrays nums1 and nums2, return an array of their intersection. Each element in the result must be unique and you may return the result in any order.
+
+ 
+
+Example 1:
+
+Input: nums1 = [1,2,2,1], nums2 = [2,2]
+Output: [2]
+Example 2:
+
+Input: nums1 = [4,9,5], nums2 = [9,4,9,8,4]
+Output: [9,4]
+Explanation: [4,9] is also accepted.
+
+
+```java
+class Solution {
+    public int[] intersection(int[] nums1, int[] nums2) {
+        HashSet<Integer> container = new HashSet<>();
+        HashSet<Integer> output = new HashSet<>();
+
+        for (int num:nums1){
+            container.add(num);
+        }
+        for (int num:nums2){
+            if(container.contains(num)){
+                output.add(num);
+            }
+        }
+
+        int[] outputArray = new int[output.size()];
+        int index = 0;
+        for (int x:output){
+            outputArray[index] = x;
+            index++;
+        }
+
+        return outputArray;
+        
+    }
+}
+```
+
+
+HashMap:
+
+HashMap 是一个基于哈希表的数据结构，用于存储键值对。
+允许使用 null 作为键，但只能有一个。
+允许使用 null 作为值。
+不保证元素的顺序，即不保证键值对的插入和迭代顺序一致。
+允许键值对的键是不可变对象（通常使用不可变对象作为键）。
+HashMap 是非线程安全的，需要在多线程环境下使用适当的同步措施。
+HashSet:
+
+HashSet 是基于哈希表的集合实现，用于存储唯一的元素（不重复）。
+允许使用 null 元素，只能有一个。
+不保证元素的顺序，即不保证元素的插入和迭代顺序一致。
+HashSet 使用哈希函数来确定元素的存储位置，从而提高了查找和插入操作的效率。
+
 
