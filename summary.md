@@ -349,6 +349,81 @@ heap : online algorithm, no fixed length,can scale acording to the new data.
 sort array: a set of fixed length data , arrary acqires rescaling every time when new data added.
 
 
+## Hashmap
 
+
+two sum
+
+```java
+class Solution {
+    public int[] twoSum(int[] nums, int target) {
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int i = 0;i < nums.length;i++){
+            if(map.containsKey(target-nums[i])){
+                return new int[] {map.get(target-nums[i]),i};
+            }
+            map.put(nums[i], i);
+        }
+        return null;
+    }
+}
+```
+
+这个例子中 index是 nums[i]，而里面的值是i 
+
+example：
+
+```java
+import java.util.HashMap; // import the HashMap class
+
+HashMap<String, String> capitalCities = new HashMap<String, String>();
+```
+
+```java
+import java.util.HashMap;
+
+public class Main {
+  public static void main(String[] args) {
+    // Create a HashMap object called capitalCities
+    HashMap<String, String> capitalCities = new HashMap<String, String>();
+
+    // Add keys and values (Country, City)
+    capitalCities.put("England", "London");
+    capitalCities.put("Germany", "Berlin");
+    capitalCities.put("Norway", "Oslo");
+    capitalCities.put("USA", "Washington DC");
+    System.out.println(capitalCities);
+  }
+}
+```
+
+```java
+capitalCities.get("England");
+```
+```java
+capitalCities.remove("England");
+```
+```java
+capitalCities.clear();
+```
+```java
+// Print keys
+for (String i : capitalCities.keySet()) {
+  System.out.println(i);
+}
+```
+```java
+// Print values
+for (String i : capitalCities.values()) {
+  System.out.println(i);
+}
+```
+
+```java
+// Print keys and values
+for (String i : capitalCities.keySet()) {
+  System.out.println("key: " + i + " value: " + capitalCities.get(i));
+}
+```
 
 
