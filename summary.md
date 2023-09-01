@@ -567,4 +567,38 @@ HashSet 是基于哈希表的集合实现，用于存储唯一的元素（不重
 不保证元素的顺序，即不保证元素的插入和迭代顺序一致。
 HashSet 使用哈希函数来确定元素的存储位置，从而提高了查找和插入操作的效率。
 
+##tree
+
+class Solution {
+    public List<List<Integer>> levelOrder(TreeNode root) {
+        List<List<Integer>> res = new ArrayList<>();
+        if(root == null){
+            return res;
+        }
+        Queue<TreeNode> q = new LinkedList<TreeNode>();
+        q.offer(root);
+
+        while(!q.isEmpty()){
+            int size = q.size();
+            List<Integer> level = new ArrayList<>();
+            for(int i =0;i < size;i++){
+            TreeNode cur = q.poll();
+            level.add(cur.val);
+            if(cur.left != null){
+                q.offer(cur.left);
+            }
+            if(cur.right != null){
+                q.offer(cur.right);
+            }
+            }
+            res.add(level);
+
+
+        }
+        return res;
+    }
+}
+
+
+
 
