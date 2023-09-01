@@ -600,5 +600,30 @@ class Solution {
 }
 ```
 
+深度搜索递归
+
+```java
+class Solution {
+    int max= Integer.MIN_VALUE;
+    public int maxPathSum(TreeNode root) {
+        path(root);
+        return max;
+        
+    }
+
+    private int path(TreeNode node){
+        if(node == null){
+            return 0;
+        }
+
+        int left = path(node.left);
+        int right = path(node.right);
+        left = left < 0? 0:left;
+        right = right < 0? 0:right;
+        max= Math.max(max,left+right+node.val);
+        return Math.max(left+node.val,right+node.val);
+}
+}
+```
 
 
