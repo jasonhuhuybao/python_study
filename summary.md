@@ -568,7 +568,7 @@ HashSet 是基于哈希表的集合实现，用于存储唯一的元素（不重
 HashSet 使用哈希函数来确定元素的存储位置，从而提高了查找和插入操作的效率。
 
 ##tree
-
+```java
 class Solution {
     public List<List<Integer>> levelOrder(TreeNode root) {
         List<List<Integer>> res = new ArrayList<>();
@@ -598,7 +598,7 @@ class Solution {
         return res;
     }
 }
-
+```
 
 
 
