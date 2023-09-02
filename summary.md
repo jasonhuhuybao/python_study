@@ -718,7 +718,7 @@ class Solution {
 }
 ```
 
-##graph
+## graph
 
 BFS 广度搜索
 Breadth-First Search;
@@ -763,7 +763,11 @@ class Solution {
 }
 ```
 
-##dynamic programing
+## dynamic programing
+
+用Top-down Implementation 逻辑更简单，但是需要HashMap，不然需要 iˆN 的时间复杂度。
+
+
 
 Top-down Implementation
 ```java
