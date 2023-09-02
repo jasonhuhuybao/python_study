@@ -595,6 +595,27 @@ HashSet 是基于哈希表的集合实现，用于存储唯一的元素（不重
 HashSet 使用哈希函数来确定元素的存储位置，从而提高了查找和插入操作的效率。
 
 ##tree
+
+广度搜索基本：
+
+ Queue<TreeNode> q = new LinkedList<TreeNode>();
+
+  q.offer(root);
+  
+ while(!q.isEmpty()){
+  TreeNode cur = q.poll();
+
+  for(int i =0;i < size;i++){
+   if(cur.left != null){
+                q.offer(cur.left);
+            }
+            if(cur.right != null){
+                q.offer(cur.right);
+            }
+            }
+ }
+ 一个个展开。
+
 ```java
 class Solution {
     public List<List<Integer>> levelOrder(TreeNode root) {
@@ -628,6 +649,26 @@ class Solution {
 ```
 
 深度搜索递归
+
+ans 用List<Integer> answer = new ArrayList<>();
+
+```java
+class Solution {
+    private List<Integer> answer = new ArrayList<>();
+    private void dfs(TreeNode node){
+        if (node == null){
+            return;
+        }
+        answer.add(node.val);
+        dfs(node.left);
+        dfs(node.right);
+    }
+    public List<Integer> preorderTraversal(TreeNode root) {
+        dfs(root);
+        return answer;
+    }
+}
+```
 
 ```java
 class Solution {
