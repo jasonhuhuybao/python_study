@@ -767,7 +767,9 @@ class Solution {
 
 用Top-down Implementation 逻辑更简单，但是需要HashMap，不然需要 iˆN 的时间复杂度。
 
+ avoid duplicate;
 
+ 
 
 Top-down Implementation
 ```java
