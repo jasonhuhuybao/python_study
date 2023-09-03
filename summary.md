@@ -243,6 +243,9 @@ return k-arr[l] < arr[r] -k ? l:r
 ```
 
 # linked list
+
+linked list 常用方法是同向双指针，这样比较快定位到合适的位置。
+
 new a linked list
 ```java
  ListNode dummy=new ListNode(0);
@@ -278,7 +281,40 @@ lass Solution {
         }
     }
 ```
+linklist 删除数组的一半
 
+```java
+class Solution {
+    public boolean isPalindrome(ListNode head) {
+        ListNode i=head,j=head,prev,temp;
+        while(j!=null && j.next != null){
+            i=i.next;
+            j=j.next.next;
+        }
+        prev=i;
+        i=i.next;
+        prev.next=null;
+        while(i != null){
+            temp = i.next;
+            i.next=prev;
+            prev=i;
+            i=temp;
+        }
+        j=head;
+        i=prev;
+        while(i != null){
+            if (i.val != j.val){
+                return false;
+            }
+            i=i.next;
+            j=j.next;
+        }
+
+
+        return true;
+    }
+}
+```
 
 
 ## revered linked list
