@@ -39,6 +39,7 @@ j++;
 }
 ```
 slide window
+方法1：用双指针来定义slide window;
 ```java
 class Solution {
     public int dietPlanPerformance(int[] calories, int k, int lower, int upper) {
@@ -66,6 +67,32 @@ class Solution {
     }
 }
 ```
+
+方法2:用deque 来定义slid window
+```java
+class MovingAverage {
+    private Queue<Integer> window;
+    private int Maxsize;
+    private double sum;
+
+    public MovingAverage(int size) {
+        window = new ArrayDeque<>();
+        Maxsize= size;
+        sum=0.0;
+    }
+    
+    public double next(int val) {
+        if(window.size()==Maxsize){
+            sum-=window.poll();
+        }
+        window.offer(val);
+        sum+=val;
+        return sum/window.size();
+        
+    }
+}
+```
+
 ## 其他笔记
 new a Array
 
