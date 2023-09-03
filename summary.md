@@ -248,6 +248,8 @@ new a linked list
  ListNode dummy=new ListNode(0);
  ```
 
+linked list 加法题
+
 ```java
 lass Solution {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
