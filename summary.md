@@ -699,6 +699,35 @@ class Solution {
         }
     }
 ```
+```java
+class Solution {
+    public int largestUniqueNumber(int[] nums) {
+        Map<Integer, Integer> count = new HashMap<>();
+
+        for(int i : nums){
+            count.put(i, count.getOrDefault(i,0)+1);
+        }
+
+        int result = -1;
+        for (Map.Entry<Integer, Integer> entry: count.entrySet()){
+            if(entry.getValue() == 1){
+                result = Math.max(result, entry.getKey());
+            }
+        }
+
+        return result;
+    }
+}
+```
+
+其中这句话：
+```java
+   for (Map.Entry<Integer, Integer> entry: count.entrySet())
+```
+用来遍历创造的count MAP
+entry.getValue()
+entry.getKey()
+来访问对应的值
 
 ##tree
 
