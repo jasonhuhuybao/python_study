@@ -246,6 +246,25 @@ return k-arr[l] < arr[r] -k ? l:r
 
 linked list 常用方法是同向双指针，这样比较快定位到合适的位置。
 
+Advantages and disadvantages compared to arrays
+To be honest, the advantages and disadvantages are not super relevant in terms of algorithm problems. This is because almost all the problems that involve linked lists will have the linked list as part of the input, so there isn't a decision on if you should use it, you're forced to. However, there are a few problems that use a linked list as part of the optimal algorithm, and you may be asked trivia in an interview, so it's still good to know the advantages and disadvantages.
+
+The main advantage of a linked list is that you can add and remove elements at any position in O
+
+O(1). The caveat is that you need to have a reference to a node at the position in which you want to perform the addition/removal, otherwise the operation is 
+
+O(n), because you will need to iterate starting from the head until you get to the desired position. However, this is still much better than a normal (dynamic) array, which requires 
+
+O(n) for adding and removing from an arbitrary position.
+
+The main disadvantage of a linked list is that there is no random access. If you have a large linked list and want to access the 150,000th element, then there usually isn't a better way than to start at the head and iterate 150,000 times. So while an array has 
+
+O(1) indexing, a linked list could require 
+
+O(n) to access an element at a given position.
+
+A few other notes that are less relevant for algorithm problems but may come up in an interview discussion - linked lists have the advantage of not having fixed sizes. While dynamic arrays can be resized, under the hood they still are allocated a fixed size - it's just that when this size is exceeded, the array is resized, which is expensive. Linked lists don't suffer from this. However, linked lists have more overhead than arrays - every element needs to have extra storage for the pointers. If you are only storing small items like booleans or characters, then you may be more than doubling the space needed.
+
 new a linked list
 ```java
  ListNode dummy=new ListNode(0);
