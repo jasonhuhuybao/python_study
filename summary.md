@@ -684,6 +684,22 @@ HashSet 是基于哈希表的集合实现，用于存储唯一的元素（不重
 不保证元素的顺序，即不保证元素的插入和迭代顺序一致。
 HashSet 使用哈希函数来确定元素的存储位置，从而提高了查找和插入操作的效率。
 
+
+```java
+class Solution {
+    public boolean checkIfPangram(String sentence) {
+
+        Set<Character>  charSet = new HashSet<>();
+
+        for ( char currChar : sentence.toCharArray()){
+        charSet.add(currChar);}
+
+        return charSet.size() == 26;
+
+        }
+    }
+```
+
 ##tree
 
 广度搜索基本：
