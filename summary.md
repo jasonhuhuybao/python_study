@@ -38,6 +38,71 @@ arr[i++] = arr[j++];
 j++;
 }
 ```
+557. Reverse Words in a String
+利用双指针， 两个语句的知识点。
+1. char[] chArray = s.toCharArray();
+2.  return new String(chArray);
+
+char[] 到 String 的转化。
+
+```java
+class Solution {
+    public String reverseWords(String s) {
+        char[] chArray = s.toCharArray();
+        int last=-1;
+        int len = s.length();
+        for(int i=0;i <= len ; i++){
+            if(i == len || chArray[i]== ' '){
+                int left=last+1;
+                int right= i-1;
+                while(left<right){
+                    char temp=chArray[left];
+                    chArray[left]=chArray[right];
+                    chArray[right] = temp;
+                    left++;
+                    right--;
+                }
+                last=i;
+
+            }
+        }
+        return new String(chArray);
+    }
+}
+```
+
+```java
+class Solution {
+    public String reverseOnlyLetters(String s) {
+        char[] Array = s.toCharArray();
+        int left=0;
+        int right= s.length()-1;
+
+        while(right>left){
+            if(!Character.isLetter(Array[right])){
+                right--;
+            }
+            else if(!Character.isLetter(Array[left])){
+                left++;
+            }
+
+            else{
+            char temp = Array[right];
+            Array[right]=Array[left];
+            Array[left]=temp;
+            right--;
+            left++;
+                
+            }
+
+        }
+
+       return new String(Array);
+
+    }
+}
+```
+
 slide window
 方法1：用双指针来定义slide window;
 ```java
